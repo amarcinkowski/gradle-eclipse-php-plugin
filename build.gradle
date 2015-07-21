@@ -1,5 +1,8 @@
 //defaultTasks 'eclipsePHP'
 
+apply plugin: 'eclipse'
+apply plugin: 'groovy'
+
 buildscript {
   repositories {
 	mavenLocal()
@@ -9,6 +12,10 @@ buildscript {
   }
 }
 
+dependencies {
+	compile gradleApi()
+	compile localGroovy()
+}
 
 
 /*
