@@ -1,0 +1,67 @@
+//defaultTasks 'eclipsePHP'
+
+buildscript {
+  repositories {
+	mavenLocal()
+  }
+  dependencies {
+//   classpath group: '', name: '', version: ''
+  }
+}
+
+
+
+/*
+configure(subprojects - project('repo')) {
+  apply plugin: EclipsePHPPlugin
+  eclipsePHP {
+	libraryFolders 'vendor', 'wp', 'wp-content'
+  }
+}
+
+
+
+class AbstractEclipsePHPTask extends DefaultTask {
+  @Input
+  File projectDir
+  @Input
+  @Optional
+  String[] libraryFolders
+}
+
+class EclipsePHPTask extends AbstractEclipsePHPTask {
+
+  private String eclipseChecksum(String dir) {
+	  def checksum = dir.length() < 10 ? String.format('%02d',dir.length()) : String.format('1%02d',dir.length())
+	  checksum
+  }
+  
+  @TaskAction
+  def eclipsePHP() {
+	def path = getProjectDir().getAbsolutePath()
+	File f = new File( path + "/.settings/org.eclipse.wst.validation.prefs")
+	def folders = "disabled="
+	getLibraryFolders().each {
+	  folders += eclipseChecksum(it) + it
+	}
+	f.write(folders + System.getProperty("line.separator"))
+	f.append('eclipse.preferences.version=1' + System.getProperty("line.separator"))
+  }
+}
+
+class CleanEclipsePHPTask extends AbstractEclipsePHPTask {
+  
+  @TaskAction
+  def cleanEclipsePHP()  {
+	def path = getProjectDir().getAbsolutePath()
+	new File(path + "/.settings").deleteDir()
+	new File(path + "/.buildpath").delete()
+	new File(path + "/.classpath").delete()
+  }
+}
+
+class EclipsePHPPluginExtension {
+	String libraryFolders
+}
+
+*/
