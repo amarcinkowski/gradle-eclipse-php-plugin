@@ -1,14 +1,13 @@
 apply plugin: 'eclipse'
 apply plugin: 'groovy'
 apply plugin: 'maven'
+apply plugin: "com.gradle.plugin-publish"
 
 buildscript {
-  repositories {
-	mavenLocal()
-  }
-  dependencies {
-//   classpath group: '', name: '', version: ''
-  }
+	repositories {
+		maven { url "https://plugins.gradle.org/m2/" }
+	}
+	dependencies { classpath "com.gradle.publish:plugin-publish-plugin:0.9.1" }
 }
 
 dependencies {
@@ -16,17 +15,17 @@ dependencies {
 	compile localGroovy()
 }
 
-repositories {
-	mavenCentral()
-}
+pluginBundle {
+	website = 'http://www.gradle.org/'
+	vcsUrl = 'https://github.com/amarcinkowski/gradle-eclipse-php-plugin'
+	description = 'Generate project files for Eclipse PHP'
+	tags = ['eclipse', 'php']
 
-group='io.github.amarcinkowski'
-version='1.2.5'
-
-uploadArchives {
-	repositories {
-		mavenDeployer {
-			repository(url: uri('/home/siutu/.m2/repository'))
+	plugins {
+		eclipsePHPPlugin {
+			id = 'io.github.amarcinkowski.eclipse-php'
+			displayName = 'Gradle Eclipse PHP plugin'
+			version='1.2.5'
 		}
 	}
 }
