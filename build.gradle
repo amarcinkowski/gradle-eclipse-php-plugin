@@ -15,6 +15,9 @@ dependencies {
 	compile localGroovy()
 }
 
+group='io.github.amarcinkowski'
+version='1.2.5'
+
 pluginBundle {
 	website = 'http://www.gradle.org/'
 	vcsUrl = 'https://github.com/amarcinkowski/gradle-eclipse-php-plugin'
@@ -25,7 +28,6 @@ pluginBundle {
 		eclipsePHPPlugin {
 			id = 'io.github.amarcinkowski.eclipse-php'
 			displayName = 'Gradle Eclipse PHP plugin'
-			version='1.2.5'
 		}
 	}
 }
