@@ -2,7 +2,9 @@
 Gradle plugin for Eclipse PHP
 
 This Gradle plugin allows you to generate project files for Eclipse PHP. Works similar to default 'eclipse' gradle plugin.
-To use it add this code snippet to your build.gradle:
+To use it add to your build.gradle.
+
+Example code snippet that will make Eclipse PHP treat 'vendor', 'wp' and 'wp-content' folders as libraries:
 
 ```
 buildscript {
@@ -17,9 +19,18 @@ buildscript {
 }
 
 apply plugin: "io.github.amarcinkowski.eclipse-php"
+
+eclipsePHP {
+  libraryFolders 'vendor', 'wp', 'wp-content'
+}
+```
+Next add the project to your settings.gradle
+```
+include 'myProjectName'
 ```
 
-Available task are:
+
+Now there are new gradle tasks available:
 ```
 eclipsePHP
 ```
@@ -27,3 +38,6 @@ and
 ```
 cleanEclipsePHP
 ```
+
+* eclipsePHP creates Eclipse project with PHP nature (generates .project and .buildpath files and .settings folders with additional elipse configurations)
+* cleanEclipsePHP removes .project .buildpath .classpath and .settings from the project folder.
