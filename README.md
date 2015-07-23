@@ -38,5 +38,5 @@ gradle eclipsePHP
 ```
 and the following command will remove all the Eclipse PHP project files mentioned earlier:
 ```
-cleanEclipsePHP
+gradle cleanEclipsePHP
 ```
