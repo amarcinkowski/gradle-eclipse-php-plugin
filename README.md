@@ -40,5 +40,5 @@ and
 cleanEclipsePHP
 ```
 
-* eclipsePHP creates Eclipse project with PHP nature (generates .project and .buildpath files and .settings folders with additional elipse configurations)
+* eclipsePHP creates Eclipse project with PHP nature (generates .project and .buildpath files and .settings folders with additional eclipse configurations)
 * cleanEclipsePHP removes .project .buildpath .classpath and .settings from the project folder.
