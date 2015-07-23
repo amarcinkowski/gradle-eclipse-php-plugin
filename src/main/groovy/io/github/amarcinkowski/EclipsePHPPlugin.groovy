@@ -13,8 +13,7 @@ class EclipsePHPPlugin implements Plugin<Project> {
 	configureTask(project)
 	project.task('eclipsePHP', type: EclipsePHPTask).dependsOn('eclipse')
 	project.task('cleanEclipsePHP', type: CleanEclipsePHPTask).dependsOn('cleanEclipse')
-//	project.getExtensions().getByName('eclipse').getProject().setNatures(['org.eclipse.php.core.PHPNature'])
-//	println project.getExtensions().getByName('eclipse').getWtp().getFacet().getProperties()
+	project.getExtensions().getByName('eclipse').getProject().setNatures(['org.eclipse.php.core.PHPNature'])
   }
   
   private void configureTask(Project project) {
