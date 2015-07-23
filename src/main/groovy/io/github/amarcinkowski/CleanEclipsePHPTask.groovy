@@ -9,6 +9,9 @@ class CleanEclipsePHPTask extends AbstractEclipsePHPTask {
 	static final String BUILDPATH_FILE = "/.buildpath";
 	static final String CLASSPATH_FILE = "/.classpath";
 
+	/**
+	 * removes .settings .buildpath .classpath from project directory
+	 */
 	@TaskAction
 	def cleanEclipsePHP()  {
 		def path = getProjectDir().getAbsolutePath()

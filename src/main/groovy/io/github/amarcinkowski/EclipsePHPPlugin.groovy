@@ -5,6 +5,9 @@ import org.gradle.api.*;
 class EclipsePHPPlugin implements Plugin<Project> {
   static final String PHP_CONFIGURATION_NAME = 'php'
   
+  /**
+   * default tasks
+   */
   @Override
   void apply(Project project) {
 	project.plugins.apply('eclipse')
@@ -16,6 +19,10 @@ class EclipsePHPPlugin implements Plugin<Project> {
 	project.getExtensions().getByName('eclipse').getProject().setNatures(['org.eclipse.php.core.PHPNature'])
   }
   
+  /**
+   * adds configurations
+   * @param project
+   */
   private void configureTask(Project project) {
 	project.tasks.withType(AbstractEclipsePHPTask) {
 		conventionMapping.map('projectDir') { project.projectDir }

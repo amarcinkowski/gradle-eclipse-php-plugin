@@ -5,16 +5,22 @@ import org.gradle.api.tasks.*;
 
 class EclipsePHPTask extends AbstractEclipsePHPTask {
 
+	final static String ECLIPSE_VALIDATION_PREFS_FILE =  "/.settings/org.eclipse.wst.validation.prefs";
+	final static String DISABLED = "disabled=";
+
 	def eclipseChecksum(String dir) {
 		def checksum = dir.length() < 10 ? String.format('%02d',dir.length()) : String.format('1%02d',dir.length())
 		checksum
 	}
 
+	/**
+	 * main task that generates validation preferences for Eclipse PHP
+	 */
 	@TaskAction
 	def eclipsePHP() {
 		def path = getProjectDir().getAbsolutePath()
-		File f = new File( path + "/.settings/org.eclipse.wst.validation.prefs")
-		def folders = "disabled="
+		File f = new File( path + ECLIPSE_VALIDATION_PREFS_FILE)
+		def folders = DISABLED;
 		getLibraryFolders().each {
 			folders += eclipseChecksum(it.toString()) + it
 		}
@@ -22,4 +28,3 @@ class EclipsePHPTask extends AbstractEclipsePHPTask {
 		f.append('eclipse.preferences.version=1' + System.getProperty("line.separator"))
 	}
 }
-	

@@ -16,7 +16,7 @@ dependencies {
 }
 
 group='io.github.amarcinkowski'
-version='1.2.6'
+version='1.2.7'
 
 pluginBundle {
 	website = 'https://github.com/amarcinkowski/gradle-eclipse-php-plugin'
