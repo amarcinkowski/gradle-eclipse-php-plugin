@@ -33,10 +33,10 @@ include 'myProjectName'
 ## Tasks
 Now there are new gradle tasks available.
 This command will create Eclipse project with PHP nature (generates .project and .buildpath files and .settings folders with additional eclipse configurations):
-```
+```bash
 gradle eclipsePHP
 ```
 and the following command will remove all the Eclipse PHP project files mentioned earlier:
-```
+```shell
 gradle cleanEclipsePHP
 ```
