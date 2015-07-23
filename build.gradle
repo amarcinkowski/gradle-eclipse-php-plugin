@@ -19,7 +19,7 @@ group='io.github.amarcinkowski'
 version='1.2.5'
 
 pluginBundle {
-	website = 'http://www.gradle.org/'
+	website = 'https://github.com/amarcinkowski/gradle-eclipse-php-plugin'
 	vcsUrl = 'https://github.com/amarcinkowski/gradle-eclipse-php-plugin'
 	description = 'Generate project files for Eclipse PHP'
 	tags = ['eclipse', 'php']
