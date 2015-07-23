@@ -7,7 +7,7 @@ To use it add to your build.gradle.
 # Configuration
 Example code snippet that will make Eclipse PHP treat 'vendor', 'wp' and 'wp-content' folders as libraries:
 
-```
+```groovy
 buildscript {
   repositories {
     maven {
