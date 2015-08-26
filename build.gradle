@@ -1,3 +1,7 @@
+// git tag -a 1.0.0 -m "New release"
+// git push --tags
+// in ~/.gradle/gradle.properties: gradle.publish.key= gradle.publish.secret=
+// gradle clean build install publishPlugins
 apply plugin: 'eclipse'
 apply plugin: 'groovy'
 apply plugin: 'maven'
